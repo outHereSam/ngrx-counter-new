@@ -19,7 +19,9 @@ export class CounterComponent {
     this.count$ = store.select(selectCount);
     this.store
       .select((state) => state.count)
-      .subscribe((count) => console.log(count));
+      .subscribe((count) =>
+        localStorage.setItem('count', JSON.stringify(count))
+      );
   }
 
   increment() {
