@@ -48,7 +48,7 @@
     </button>
   </div>
 
-  <div class="input-field">
+  <div class="interval">
     <label for="">Set Interval:</label>
     <input
       type="number"
@@ -56,6 +56,14 @@
       (change)="setInterval()"
       [(ngModel)]="interval"
     />
+
+    <div class="presets">
+      @for (preset of presets; track preset) {
+      <button (click)="changeInterval(preset)">{{ preset }}x</button>
+      }
+      <!-- <button class="5x" (click)="changeInterval(5)">5x</button>
+      <button class="10x" (click)="changeInterval(10)">10x</button> -->
+    </div>
   </div>
 
   <div class="reset-btn">
