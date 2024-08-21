@@ -48,7 +48,7 @@
     </button>
   </div>
 
-  <div class="input-field">
+  <div class="interval">
     <label for="">Set Interval:</label>
     <input
       type="number"
@@ -56,6 +56,12 @@
       (change)="setInterval()"
       [(ngModel)]="interval"
     />
+
+    <div class="presets">
+      <button class="2x" (click)="changeInterval(2)">2x</button>
+      <button class="5x" (click)="changeInterval(5)">5x</button>
+      <button class="10x" (click)="changeInterval(10)">10x</button>
+    </div>
   </div>
 
   <div class="reset-btn">

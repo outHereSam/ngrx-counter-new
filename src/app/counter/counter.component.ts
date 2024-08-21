@@ -51,4 +51,9 @@ export class CounterComponent {
     this.store.dispatch(setIntervalBy({ interval: this.interval }));
     // console.log(event.target.value);
   }
+
+  changeInterval(intervalValue: number) {
+    this.interval = intervalValue;
+    this.setInterval();
+  }
 }
