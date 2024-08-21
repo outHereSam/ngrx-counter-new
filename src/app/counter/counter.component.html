@@ -50,7 +50,12 @@
 
   <div class="input-field">
     <label for="">Set Interval:</label>
-    <input type="number" min="1" (change)="setInterval($event)" />
+    <input
+      type="number"
+      min="1"
+      (change)="setInterval()"
+      [(ngModel)]="interval"
+    />
   </div>
 
   <div class="reset-btn">

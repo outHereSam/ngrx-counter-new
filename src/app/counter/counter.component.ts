@@ -11,16 +11,18 @@ import { selectCount } from '../state/counter/counter.selectors';
 import { Observable } from 'rxjs';
 import { AppState } from '../app.state';
 import { CountState } from '../state/counter/counter.reducer';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, FormsModule],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css',
 })
 export class CounterComponent {
   count$?: Observable<CountState>;
+  interval = 1;
 
   constructor(private store: Store<AppState>) {
     this.count$ = store.select(selectCount);
@@ -42,10 +44,11 @@ export class CounterComponent {
 
   reset() {
     this.store.dispatch(reset());
+    this.interval = 1;
   }
 
-  setInterval(event: any) {
-    this.store.dispatch(setIntervalBy({ interval: event.target.value }));
+  setInterval() {
+    this.store.dispatch(setIntervalBy({ interval: this.interval }));
     // console.log(event.target.value);
   }
 }
