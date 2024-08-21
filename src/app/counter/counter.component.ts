@@ -23,6 +23,7 @@ import { FormsModule } from '@angular/forms';
 export class CounterComponent {
   count$?: Observable<CountState>;
   interval = 1;
+  presets = [2, 5, 10, 15];
 
   constructor(private store: Store<AppState>) {
     this.count$ = store.select(selectCount);

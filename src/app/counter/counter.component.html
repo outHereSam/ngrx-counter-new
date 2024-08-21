@@ -58,9 +58,11 @@
     />
 
     <div class="presets">
-      <button class="2x" (click)="changeInterval(2)">2x</button>
-      <button class="5x" (click)="changeInterval(5)">5x</button>
-      <button class="10x" (click)="changeInterval(10)">10x</button>
+      @for (preset of presets; track preset) {
+      <button (click)="changeInterval(preset)">{{ preset }}x</button>
+      }
+      <!-- <button class="5x" (click)="changeInterval(5)">5x</button>
+      <button class="10x" (click)="changeInterval(10)">10x</button> -->
     </div>
   </div>
 
