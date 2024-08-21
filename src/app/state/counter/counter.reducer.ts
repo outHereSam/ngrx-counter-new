@@ -14,14 +14,11 @@ export const countReducer = createReducer(
   initialState,
   on(increment, (state) => ({
     ...state,
-    count: Number(state.count) + Number(state.interval),
+    count: state.count + state.interval,
   })),
   on(decrement, (state) => ({
     ...state,
-    count:
-      state.count > 0
-        ? Number(state.count) - Number(state.interval)
-        : state.count,
+    count: state.count > 0 ? state.count - state.interval : state.count,
   })),
   on(setIntervalBy, (state, intervalValue) => ({
     ...state,
