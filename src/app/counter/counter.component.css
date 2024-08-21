@@ -50,6 +50,26 @@
   stroke: white;
 }
 
+.input-field {
+  /* border: solid 1px pink; */
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 20px 0 0 0;
+}
+
+.input-field label {
+  margin: 0 0 10px 0;
+}
+
+.input-field input {
+  padding: 10px 8px;
+  background-color: #0f1918;
+  border: none;
+  outline: none;
+  color: white;
+}
+
 .reset-btn {
   margin: 40px 0 0 0;
 }
