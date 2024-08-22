@@ -18,7 +18,7 @@ export const countReducer = createReducer(
   })),
   on(decrement, (state) => ({
     ...state,
-    count: state.count > 0 ? state.count - state.interval : state.count,
+    count: state.count > 0 ? state.count - state.interval : 0,
   })),
   on(setIntervalBy, (state, intervalValue) => ({
     ...state,
